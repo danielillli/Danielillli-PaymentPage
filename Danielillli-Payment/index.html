@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Great, that's £<span id="totalAmount">0.00</span>!</h2>
+        <form id="paymentForm">
+            <div class="delivery-option">
+                <h3>Choose Delivery Method</h3>
+                <div class="form-group">
+                    <input type="radio" id="standard" name="delivery" value="5" checked>
+                    <label for="standard" class="delivery-label">
+                        Standard (5-10 business days) - £5.00
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="fast" name="delivery" value="10">
+                    <label for="fast" class="delivery-label">
+                        Fast (2-4 business days) - £10.00
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="express" name="delivery" value="20">
+                    <label for="express" class="delivery-label">
+                        Express (1 business day) - £20.00
+                    </label>
+                </div>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="paypal" name="paymentMethod" checked>
+                <label for="paypal" class="payment-label">
+                    <span class="payment-icon"><i class="fab fa-paypal"></i></span>
+                    PayPal
+                </label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="card" name="paymentMethod">
+                <label for="card" class="payment-label">
+                    <span class="payment-icon">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                    </span>
+                    Debit/credit card
+                </label>
+                <div class="card-details">
+                    <div class="form-group">
+                        <label for="cardnumber">Card number</label>
+                        <input type="text" id="cardnumber" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-group inline">
+                        <div>
+                            <label for="expiry">Expiry</label>
+                            <input type="text" id="expiry" class="form-control" placeholder="MM/YY">
+                        </div>
+                        <div>
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" class="form-control" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success" type="button" onclick="finishPayment()">Finish and pay</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
